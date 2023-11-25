@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AIDforYOU|Home</title>
+   <style>
+    .w-100{
+            width: 100% !important;
+            height: 50vh;
+    }
+   </style>
+   {%include 'Aid_app/common/commoncss.html'%}
+</head>
+<body class="color" style="background-color: rgb(243, 125, 151); height:fit-content;">
+    <div class="container-fluid" style="background-color: aqua;">
+        <h2 class="text-dark" style="text-align: center; margin: 0px; "><marquee direction="right" scrollamount="10" scrolldelay="50"
+          onmouseover="this.stop()" onmouseout="this.start()">Welcome to AIDforYOU</marquee> </h2></div>
+    
+    {% include 'Aid_app/html/header.html'  %}
+
+
+
+    <!-- carousel code start from here -->
+    <div class="container" >
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner" style="margin: 4px;">
+          <div class="carousel-item active">
+            <img src="{% static 'Aid_app/images/hands.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'Aid_app/images/health.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'Aid_app/images/medical.webp'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'Aid_app/images/diet.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+
+<!-- carousel code ends here -->
+<!-- <div class="container-fluid" > -->
+
+{% for Health_Campaign_obj in Health_Campaign_key %}
+
+
+<div class="card" style="width: 20%;margin-left:2px;color: black; background-color: rgb(165, 42, 136)"><marquee direction="up" scrollamount="10" scrolldelay="50"
+  onmouseover="this.stop()" onmouseout="this.start()">
+ <div class="card-body">
+    <h5 class="card-title">name:{{Health_Campaign_obj.Campaign_Name}}</h5>
+    <h5 class="card-title">venue:{{Health_Campaign_obj.venue}}</h5>
+    <h5 class="card-title">organizer:{{Health_Campaign_obj.Organizer_Name}}</h5>
+    <h5 class="card-title">date:{{Health_Campaign_obj.Date}}</h5>
+  </div>
+</marquee></div>
+{%endfor%}
+
+     {% include 'Aid_app/html/footer.html' %}
+    {% include 'Aid_app/common/commonjs.html' %}
+
+    
+</body>
+</html>

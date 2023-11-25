@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDforYOU|Doctor-registration</title>
+    {%include 'Aid_app/common/commoncss.html'%}
+
+</head>
+<body  class="color" style="background-color: rgb(243, 125, 151); height:fit-content";>
+    {% include 'Aid_app/html/header.html' %}
+    {%if messages%}
+  {%for m in messages%}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{m}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {%endfor%}
+
+
+  {% endif %}
+    <div class="container h-100">
+        <div class="d-flex justify-content-center">
+            <div class="card mt-5 col-md-5">
+                <div class="card-header">
+                <p class="animate-charcter" style="font-size: 40px;text-align: center"><b><i class='fas fa-user-cog'></i>Doctor Registration Form</b></p>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="/registration/">
+                        {%csrf_token%}
+
+                        
+                            <div id="dynamic_container">
+                            <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text br-15"><i class="fas fa-id-card"></i></span>
+                            </div>
+                            <input type="text" name="Doctorid" required placeholder="Enter Your Doctorid" class="form-control"/>
+                            
+                            
+                            </div>
+                           
+                            
+                              <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text br-15"><i class="fas fa-lock"></i></span>
+                                
+                                  </div>
+                                <input type="password" name="password" required placeholder="Enter Your password" class="form-control"/>
+                                
+                                
+                              </div>  
+                                
+                                
+                              </div> 
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text br-15"><i class="fas fa-user-graduate"></i></span>
+                                </div>
+                                <input type="text" name="name" placeholder="Enter Your name" required class="form-control"/>
+                                
+                                
+                            </div>
+                             
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text br-15"><i class="fas fa-solid fa-envelope"></i></span>
+                                </div>
+                                <input type="email" name="email" required placeholder="Enter Your Email" class="form-control"/>
+                                
+                                
+                            </div>
+                            <div class="input-group mt-3">
+                              <div class="input-group-prepend">
+                              <span class="input-group-text br-15"><i class="fas fa-user-graduate"></i></span>
+                              </div>
+
+                          <label class="form-check-label" for="gender">gender</label>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="female">
+                                  <label class="form-check-label" for="flexRadioDefault1">
+                                    female
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="male">
+                                  <label class="form-check-label" for="flexRadioDefault2">
+                                    male
+                                  </label>
+                                </div>
+                          </div>
+                              
+                            
+                            
+                            
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text br-15"><i class="fas fa-landmark"></i></span>
+                                </div>
+                                <input type="text" name="address" required placeholder="Enter Your address" class="form-control"/>
+                                
+                                
+                            
+                            </div>
+                            
+                        <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text br-15"><i class="fas fa-phone-square"></i></span>
+                                </div>
+                                <input type="number" name="phone" required placeholder="Enter Your Phone Number" class="form-control"/>
+                                
+                                
+                            </div>
+                            <div class="input-group mt-3">
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text br-15"><i class="fas fa-user-graduate"></i></i></span>
+                              </div>
+                              <input type="number" name="age" required placeholder="Enter Your age" class="form-control"/>
+                              
+                              
+                          </div>
+                         
+                          <div class="input-group mt-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text br-15"><i class="fas fa-user-graduate"></i></span>
+                            </div>
+                            <input type="text" name="fieldSpecialist" placeholder="Enter Your fieldSpecialist" required class="form-control"/>
+                            
+                            
+                        </div>
+                            
+                        <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text br-15"><i class="fas fa-user-graduate"></i></span>
+                                </div>
+                                <input type="text" name="cityName" placeholder="Enter Your cityName" required class="form-control"/>
+                                
+                                
+                            </div>
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text br-15"><i class="fas fa-user-graduate"></i></span>
+                                </div>
+                                <input type="text" name="experience" placeholder="Enter Your experience" required class="form-control"/>
+                                
+                                
+                            </div>
+                            
+                            
+                            
+                        </div>
+                            
+                        <div class="card-footer text-center">
+                    <!-- <a class="btn btn-secondary btn-sm" id="add_more"><i class="fas fa-plus-circle"></i> Add</a>
+                    <a class="btn btn-secondary btn-sm" id="remove_more"><i class="fas fa-trash-alt"></i> Remove</a> -->
+                    <button  style="width: 150px;height: 50px;text-align: center;" class="btn btn-success"><i class="fas fa-arrow-alt-circle-right"></i> <b>Submit</b></button>
+                </div>
+                </form>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+     {%  include 'Aid_app/html/footer.html'%}
+    
+    
+     {% include 'Aid_app/common/commonjs.html' %}
+    
+</body>
+</html>
+
+    
+</body>
+</html>

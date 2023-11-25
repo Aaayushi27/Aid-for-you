@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoctorProfile</title>
+    {%include 'Aid_app/common/commoncss.html'%}
+    <style>
+        .li{
+            color: aqua;
+            font-size: 20px;
+        }
+        .list-group-item{
+
+background-color: rgba(244, 166, 189, 0.911)!important;
+}
+    </style>
+</head>
+<body class="color" style="background-color: rgb(243, 125, 151); height:fit-content";>
+    {% include 'Aid_app/Doctor/doctor_header.html' %}
+    <form method="post" action="/dedit_profile/">
+        {%csrf_token%}
+    <div class="card w-75 justify-content-center" style="background-color: rgb(29, 205, 218); height:fit-content";>
+        <div class="card-header">
+          Your Profile 😁
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Your id :{{doctor_data.id}} </li>
+          <li class="list-group-item">Your password:{{doctor_data.password}}</li>
+          <li class="list-group-item">name{{doctor_data.name}}</li>
+          <li class="list-group-item">
+            address:
+            <textarea row="2" cols="100" name="address" required class="form-control">{{doctor_data.address}}</textarea>  </li>
+          <li class="list-group-item">
+          email:
+          <input type="email"name="email" required class="form-control" value="{{doctor_data.email}}"></li>
+          <li class="list-group-item">gender:{{doctor_data.gender}}</li>
+          <li class="list-group-item"> phone:
+            <input type="number"name="phone" required class="form-control" value="{{doctor_data.phone}}"> </li>
+          <li class="list-group-item">age:{{doctor_data.age}}</li>
+          <li class="list-group-item">cityname:
+            <input type="text" name="city" required class="form-control" value="{{doctor_data.cityname}}"> </li>
+          <li class="list-group-item">experience:{{doctor_data.experience}}</li>
+          <li class="list-group-item">specialization:{{doctor_data.specialization}}</li>
+        </ul>
+        <button type="submit".class="btn.btn.primary">Submit</button>
+      </div>
+    </form>
+
+
+
+    
+
+    
+    {% include 'Aid_app/common/commonjs.html' %}
+    
+    
+</body>
+</html>

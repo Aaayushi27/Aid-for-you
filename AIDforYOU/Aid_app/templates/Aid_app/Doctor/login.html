@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowledgeNexus|Doctor login
+    </title>
+    
+    {%include 'Aid_app/common/commoncss.html'%}
+
+
+</head>
+<body  class="color" style="background-color: rgb(243, 125, 151); height:fit-content";>
+  {%if messages%}
+  {%for m in messages%}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{m}}</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {%endfor%}
+
+
+  {% endif %}
+
+  
+
+
+    {% include 'Aid_app/html/header.html' %}
+    
+    <div class="container h-100">
+      <div class="d-flex justify-content-center">
+        <div class="card mt-5 col-md-5">
+          <div class="card-header">
+          <p class="animate-charcter" style="font-size: 40px;text-align: center"><b><i class='fas fa-user'></i> Login Form</b></p>
+          </div>
+          <div class="card-body">
+            <form method="post" action="/login/">
+              <div id="dynamic_container">
+                {%csrf_token%}
+                
+                
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    
+                  </div>
+                  <input type="text" name="Doctorid" placeholder="Enter Your id" required class="form-control"/>
+                  
+                  
+                </div>
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    
+                  </div>
+                  <input type="password" name="password" required placeholder="Enter Your password" class="form-control"/>
+                  
+                  
+                </div>
+              </div>
+                
+                
+          <div class="card-footer text-center">
+            <button  style="width: 150px;height: 50px;text-align: center;" class="btn btn-success"><i class="fas fa-arrow-alt-circle-right"></i> <b>Submit</b></button>
+         
+          </form>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    {%  include 'Aid_app/html/footer.html'%}
+    {% include 'Aid_app/common/commonjs.html' %}
+
+
+    
+</body>
+</html>

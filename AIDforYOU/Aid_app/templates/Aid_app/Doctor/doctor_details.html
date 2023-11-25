@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Doctor</title>
+    {%include 'Aid_app/common/commoncss.html'%}
+</head>
+<body class="color" style="background-color: rgb(204, 104, 146); height:fit-content;">
+    {%if messages%}
+    {%for m in messages%}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{m}}</strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {%endfor%}
+  
+  
+    {% endif %}
+  
+    {%include 'Aid_app/doctor/doctor_header.html'%}
+    
+        <form method="post" action="/doctor_details/" enctype="multipart/form-data">
+        {%csrf_token%}
+        <section class="vh-100 bg-image" >
+            <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+                <div class="container h-100">
+                    <div
+                        class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="card" style="border-radius: 15px;">
+                                <div class="card-body p-5">
+    
+                                    <h2 class="black"
+                                        style="text-align: center; margin-top: 20px; ">Doctor
+                                        Detail</h2>
+                                    <form method="post" action="/doctor_details/" onsubmit="return validation()" class="needs-validation" novalidate>
+                                        <div class="form-outline mb-2">
+                                            <label class="form-label" for="form3Example1cg">Select fieldname
+                                               </label>
+                                        </div>
+    
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox"
+                                                name="fieldname" value="allopathy"> <label
+                                                class="form-check-label" for="inlineCheckbox1">Allopathy</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox"
+                                                name="fieldname" value="homeopathy"> <label
+                                                class="form-check-label" for="inlineCheckbox2">Homeopathy</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox"
+                                                name="fieldname" value="ayurved"> <label
+                                                class="form-check-label" for="inlineCheckbox3">Ayurved</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox"
+                                                name="fieldname" value="dental"> <label
+                                                class="form-check-label" for="inlineCheckbox3">dental</label>
+                                        </div>
+                                        
+                                        <div class="form-group mb-2">
+                                            <label class="from-label">specialization</label>
+                                            <select class="form-select" name="specialization" aria-label="Default select example">
+                                                <option selected>specialization</option>
+                                                <option>Hearth specialist</option>
+                                                <option>Neurologist</option>
+                                                <option>Ueurologist</option>
+                                                <option>Gynecologist</option>
+                                                <option>Orthopedics</option>
+                                                <option>Medicine</option>
+                                              </select>
+                                              <div class="invalid-feedback">Please Enter Please</div>
+                                               </div>
+                                                <div class="form-group mb-2">
+                                                    <label class="from-label">visiting_hours</label>
+                                                    <select class="form-select" name="visiting_hours" aria-label="Default select example">
+                                                        <option selected>visiting_hours</option>
+                                                        <option>9am-6pm</option>
+                                                        <option>6am-2pm</option>
+                                                        <option>10am-8pm</option>
+                                                        <option>fullday</option>
+                                                        <option>24hrs</option>
+                                                      </select>
+                                                      </div>
+                                                      <div class="invalid-feedback">Please Enter Please</div>
+                                                     </div>
+                                                      
+                                                        <div class="form-group mb-2">
+                                            <label class="from-label">Any Other Details</label>
+                                            
+                                            <textarea name="details" rows="4" class="form-control"></textarea>
+                                            <div class="invalid-feedback">Please Enter Please</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Input type file</label> <input
+                                                type="file" class="form-control-file"
+                                                name="profile_pic">
+                                                <div class="invalid-feedback">Please choose any file</div>
+                                        </div>
+                                        <div style="text-align: center; margin-top: 10px" class="form-group" >
+                                                <button type="submit" class="btn btn-primary" id="username">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+    
+    {%  include 'Aid_app/html/footer.html ' %}
+    
+     {% include 'Aid_app/common/commonjs.html' %} 
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoctorHome</title>
+    {%include 'Aid_app/common/commoncss.html'%}
+    <style>
+        li{
+          color:rgb(67, 3, 3) !important;
+        font-size: 20px;
+     
+        }
+       
+        .list-group-item{
+
+          background-color: rgba(244, 166, 189, 0.911)!important;
+        }
+    </style>
+   
+</head>
+<body  class="color" style="background-color: rgb(243, 125, 151); height:fit-content";>
+    {% include 'Aid_app/Doctor/Doctor_header.html' %}
+    <div class="card w-75 justify-content-center">
+        <div class="card-header">
+          Your Profile Details💜
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Your id :{{doctor_data.id}} </li>
+        
+          <li class="list-group-item">name:{{doctor_data.name}}</li>
+          <li class="list-group-item">address:{{doctor_data.address}}</li>
+          <li class="list-group-item">email:{{doctor_data.email}}</li>
+          <li class="list-group-item"> gender :{{doctor_data.gender}} </li>
+          <li class="list-group-item"> phone:{{doctor_data.phone}}</li>
+          <li class="list-group-item">age:{{doctor_data.age}}</li>
+          <li class="list-group-item">cityName:{{doctor_data.cityName}}</li>
+          <li class="list-group-item">fieldSpecialist:{{doctor_data.fieldSpecialist}}</li>
+          <li class="list-group-item">experience:{{doctor_data.experience}}</li>
+        </ul>
+      </div>
+
+
+
+    
+    {% include 'Aid_app/common/commonjs.html' %}
+    
+    
+</body>
+</html>
